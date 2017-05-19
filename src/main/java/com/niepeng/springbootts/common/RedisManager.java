@@ -160,6 +160,7 @@ public class RedisManager {
                     byte[] redisKey = stringRedisTemplate.getStringSerializer().serialize(keyEnum);
                     if (connection.exists(redisKey)) {
                         byte[] value = connection.get(redisKey);
+                        // JSONObject.parse(value)
                         return stringRedisTemplate.getStringSerializer().deserialize(value);
                     }
                     return null;

@@ -39,4 +39,4 @@ public class RedisTests {
     Assert.assertEquals(value, stringRedisTemplate.opsForValue().get(key));
   }
 
-}
+  }

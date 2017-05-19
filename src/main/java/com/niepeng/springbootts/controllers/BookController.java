@@ -31,9 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController extends BaseController {
 
 
-  @Autowired
-  private BlobProperites blobProperites;
-
   @ApiOperation(value="测试接口", notes="返回一段文本信息")
   @RequestMapping(value="/index", method= RequestMethod.GET)
   public String index() {
@@ -79,6 +76,8 @@ public class BookController extends BaseController {
     return books.get(id);
   }
 
+
+
   @ApiOperation(value="修改book信息", notes="根据id修改book信息")
   @ApiImplicitParams({
       @ApiImplicitParam(paramType = "path", name = "id", value = "id", required = true, dataType = "Long"),
@@ -94,13 +93,13 @@ public class BookController extends BaseController {
     return "success";
   }
 
+
   @ApiOperation(value="删除book信息", notes="根据id删除book")
   @ApiImplicitParam(paramType="path", name = "id", value = "bookId", required = true, dataType = "Long")
   @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
-  public String deleteUser(@PathVariable Long id) {
+  public String deleteBook(@PathVariable Long id) {
     books.remove(id);
     return "success";
   }
-
 
 }

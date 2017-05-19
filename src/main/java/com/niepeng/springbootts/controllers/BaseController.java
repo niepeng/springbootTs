@@ -4,6 +4,9 @@ package com.niepeng.springbootts.controllers;
  */
 
 
+import com.niepeng.springbootts.config.BlobProperites;
+import com.niepeng.springbootts.dao.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,5 +16,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BaseController {
+
+  @Autowired
+  protected BlobProperites blobProperites;
+
+  @Autowired
+  protected UserMapper userMapper;
 
 }

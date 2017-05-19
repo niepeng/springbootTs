@@ -27,6 +27,7 @@ public class SwaggerConfig {
 
   private static final String GROUP_BOOK = "book";
   private static final String GROUP_PAGE = "page";
+  private static final String GROUP_USER = "user";
 
 
   @Bean
@@ -53,6 +54,17 @@ public class SwaggerConfig {
         .build();
   }
 
+  @Bean
+  public Docket createRestApi3() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .groupName(GROUP_USER)
+        .apiInfo(apiInfo())
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("com.niepeng.springbootts.controllers"))
+//        .paths(PathSelectors.any())
+        .paths(regex("/user/.*"))
+        .build();
+  }
 
 
   private ApiInfo apiInfo() {
