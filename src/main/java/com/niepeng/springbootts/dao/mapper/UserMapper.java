@@ -3,11 +3,7 @@ package com.niepeng.springbootts.dao.mapper;
 import com.niepeng.springbootts.dao.UserDO;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-/**
- * Created by lsb on 17/5/19.
- */
 
 @Mapper
 public interface UserMapper {
